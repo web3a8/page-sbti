@@ -35,7 +35,10 @@ const testHint = document.getElementById("testHint");
 
 function showScreen(name) {
   Object.entries(screens).forEach(([key, element]) => {
-    element.classList.toggle("active", key === name);
+    const isActive = key === name;
+    element.classList.toggle("active", isActive);
+    element.hidden = !isActive;
+    element.setAttribute("aria-hidden", String(!isActive));
   });
   window.scrollTo({ top: 0, behavior: "smooth" });
 }

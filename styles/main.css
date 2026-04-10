@@ -74,6 +74,14 @@ button:disabled {
   display: block;
 }
 
+[hidden] {
+  display: none !important;
+}
+
+#intro.screen.active {
+  display: flex;
+}
+
 .card {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -106,7 +114,6 @@ button:disabled {
 
 .hero-minimal {
   min-height: 48vh;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -158,7 +165,14 @@ h2 {
 }
 
 .intro-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   text-wrap: pretty;
+}
+
+.intro-copy a {
+  color: var(--accent-strong);
 }
 
 .hero-actions {
