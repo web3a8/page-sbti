@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>SBTI 测试</title>
+    <meta
+      name="description"
+      content="一个纯静态部署的 SBTI 娱乐人格测试 H5 页面。"
+    />
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section id="intro" class="screen active card hero hero-minimal">
+        <div class="eyebrow">纯静态 H5 版本</div>
+        <h1>SBTI 测试</h1>
+        <p class="sub intro-copy">
+          基于开源版本重构为更易维护的静态站。题库、人格库和评分逻辑已拆分，方便后续继续改文案、改结果和接自定义域名部署。
+        </p>
+        <div class="hero-actions hero-actions-single">
+          <button id="startBtn" class="btn-primary" type="button">开始测试</button>
+        </div>
+      </section>
+
+      <section id="test" class="screen">
+        <div class="test-wrap card">
+          <div class="topbar">
+            <button id="backIntroBtn" class="btn-secondary" type="button">
+              返回首页
+            </button>
+            <div class="progress-wrap">
+              <div class="progress" aria-hidden="true">
+                <span id="progressBar"></span>
+              </div>
+              <div class="progress-text" id="progressText">0 / 31</div>
+            </div>
+          </div>
+
+          <div class="hint" id="testHint">
+            全选完才会放行。世界已经够乱了，起码把题做完整。
+          </div>
+
+          <div id="questionList" class="question-list"></div>
+
+          <div class="submit-bar">
+            <button id="submitBtn" class="btn-primary" type="button" disabled>
+              提交并查看结果
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="result" class="screen">
+        <div class="result-wrap card">
+          <div class="result-layout">
+            <div class="result-top">
+              <div id="posterBox" class="poster-box">
+                <img id="posterImage" class="poster-image" alt="" />
+                <p id="posterCaption" class="poster-caption"></p>
+              </div>
+
+              <div class="type-box">
+                <div class="type-kicker" id="resultModeKicker">你的主类型</div>
+                <div class="type-name" id="resultTypeName">CTRL（拿捏者）</div>
+                <div class="type-subname" id="resultTypeSub">系统备注会显示在这里。</div>
+                <div class="match-badge" id="matchBadge">匹配度 100%</div>
+                <p id="resultDesc" class="type-desc"></p>
+              </div>
+            </div>
+
+            <div class="analysis-box">
+              <h2>十五维简报</h2>
+              <div id="dimList" class="dim-list"></div>
+            </div>
+
+            <div class="note-box">
+              <h2>友情提示</h2>
+              <p id="funNote"></p>
+            </div>
+
+            <div class="result-actions">
+              <button id="restartBtn" class="btn-secondary" type="button">
+                重新测试
+              </button>
+              <button id="toTopBtn" class="btn-primary" type="button">
+                返回首页
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./scripts/main.js"></script>
+  </body>
+</html>
